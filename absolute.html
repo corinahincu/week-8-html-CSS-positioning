@@ -1,0 +1,73 @@
+<!--   
+  CSS POSITIONING (other than the document flow):
+
+  static           + 
+  relative            (top right bottom left z-index ) - aka transform:translate(..)
+  absolute 
+  fixed
+  sticky
+
+  absolute -- 
+  1.elementul care este pozitionat absolut, este scos din locul in care se afla el, si l-ai pune intr-un         flux complet separat, dar cu aceleasi coordinate. 
+  2. elementul absolut nu tine cont de elementele care 
+  se aflau  alaturi de el si celelalte elemente se comporta intr-un fel ca elementul absolut nu ar exista.
+
+  are libertate absoluta, nu depinde de nimeni, doar de fereastra. Se misca liber pe intreaga suprafata a ferestrei
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #222;
+      height: 2000px;
+    }
+    /*.parent{
+      border: 2px solid orange;
+      padding: 10px;
+      display: inline-block;
+    }*/
+    .parent div {
+      width: 100px;
+      height: 100px;
+    }
+    .parent .child-1{
+      position: absolute;
+      background-color: #555;
+      top: 100px;
+      left: 100px;
+      z-index: 3;
+    }
+    .parent .child-2{
+      background-color: #888;
+      /*POSITION RIGHT HERE*/
+      position: absolute;
+      top: 50px;
+      left: 50px;
+    }
+    
+    .parent .child-3{
+      position: absolute;
+      background-color: #BBB;
+      top: 0;
+      left: 0;
+      z-index: -2;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="parent">
+    <div class="child-1">1</div>
+    <div class="child-2">2</div>
+    <div class="child-3">3</div>
+  </div>
+</body>
+</html>
+
+<!-- 
+  HW   arrange the elements in the next maner...
+-->
