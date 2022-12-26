@@ -1,0 +1,57 @@
+<!--   
+  CSS POSITIONING (other than the document flow):
+      
+      static 
+      relative  (top, right, bottom, left, z-index) - aka transform:translate(...) face elementul un pic independent, local liber, e liber in zona in care se afla el, nu fata de fereastra
+      absolute
+      fixed
+      sticky
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Relative Position</title>
+  <style>
+    body {
+      background-color: #222;
+    }
+    .parent{
+      border: 2px solid orange;
+      padding: 10px;
+      display: inline-block;
+    }
+    .parent div {
+      width: 100px;
+      height: 100px;
+    }
+    .parent .child-1 {
+      background-color: #555;
+
+    }
+    .parent .child-2 {
+      background-color: #888;
+      /* POSITION RIGHT HERE*/
+      position: relative;
+      top: 50px;
+      left: 50px;
+      z-index: -1;
+    }
+    .parent .child-3 {
+      background-color: #BBB;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <div class="child-1">1</div>
+    <div class="child-2">2</div>
+    <div class="child-3">3</div>
+  </div>
+</body>
+</html>
+
+<!--  
+  HW1: define formula browser calculates BODY height ?? 
+  noi am specificat inaltimea lui body prin descendant selector ".parent div". Avem trei elemente div, care au parintele numit class="parent". Prin selectorul nostru noi am spus browserului ca fiecare element div din elementul parinte, are inaltimea 100px si latimea 100px, in asa mod browserul intelege body ar fi 100x300.
+-->
